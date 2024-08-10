@@ -1,14 +1,14 @@
 USE eedb011_ingestaodedados;
-DROP TABLE Bancos;
-CREATE TABLE Bancos (
+
+CREATE TABLE IF NOT EXISTS Bancos (
 	SEGMENTO NVARCHAR(5),
     CNPJ NVARCHAR(20) NOT NULL PRIMARY KEY,
     NOME NVARCHAR(255),
     NOME_Sem_Prudencial NVARCHAR(255)
 );
 
-DROP TABLE Reclamacoes;
-CREATE TABLE Reclamacoes (
+
+CREATE TABLE IF NOT EXISTS Reclamacoes (
 	Ano INT,
 	Trimestre NVARCHAR(4),
 	Categoria NVARCHAR(100),
@@ -25,8 +25,8 @@ CREATE TABLE Reclamacoes (
 	Quantidade_de_clientes_SCR INT
 );
 
-DROP TABLE Empregados;
-CREATE TABLE Empregados (
+
+CREATE TABLE IF NOT EXISTS Empregados (
 	employer_name NVARCHAR(50),
 	reviews_count INT,
 	culture_count INT,
